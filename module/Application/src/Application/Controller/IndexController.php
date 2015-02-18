@@ -11,4 +11,14 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+
+    public function contactsAction()
+    {
+        return new ViewModel();
+    }
+
+    public function blogAction()
+    {
+        return new ViewModel();
+    }
 }

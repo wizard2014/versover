@@ -1,17 +1,10 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
 return array(
     'router' => array(
         'routes' => array(
             'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Literal',
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
@@ -20,10 +13,6 @@ return array(
                     ),
                 ),
             ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
             'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
@@ -47,6 +36,26 @@ return array(
                             'defaults' => array(
                             ),
                         ),
+                    ),
+                ),
+            ),
+            'contacts' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/contacts',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'contacts',
+                    ),
+                ),
+            ),
+            'blog' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/blog',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Index',
+                        'action'     => 'contacts',
                     ),
                 ),
             ),

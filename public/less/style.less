@@ -1,0 +1,241 @@
+/******************************************************************************
+fonts (16 18 20 22 24 26 28 36 48)
+*******************************************************************************/
+//@import "../vendor/bootstrap-material-design/less/material-wfont.less";
+@import url(http://fonts.googleapis.com/css?family=Audiowide);
+
+/******************************************************************************
+main
+*******************************************************************************/
+@base-bg-color: #009587;
+@special-font-family: 'Audiowide', cursive;
+
+.gradient-1(@r, @g, @b, @rate) {
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 80%, rgba(@r,@g,@b,1) 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(@rate,rgba(255,255,255,1)), color-stop(100%,rgba(@r,@g,@b,1)));
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: linear-gradient(135deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+}
+
+.gradient-2(@r, @g, @b, @rate) {
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(45deg,  rgba(255,255,255,1) 80%, rgba(@r,@g,@b,1) 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(@rate,rgba(255,255,255,1)), color-stop(100%,rgba(@r,@g,@b,1)));
+  background: -webkit-linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -o-linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -ms-linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+// remove margin and padding
+.clear-space {
+  margin: 0;
+  padding: 0;
+}
+
+// links style
+.clear-link-decoration {
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .clear-space;
+}
+
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid #FFFFFF;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    border-bottom: none;
+  }
+}
+
+/******************************************************************************
+footer
+*******************************************************************************/
+#footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  padding-top: 20px;
+}
+
+/******************************************************************************
+brand
+*******************************************************************************/
+#brand a {
+  font-size: 36px;
+  font-family: @special-font-family;
+  color: #ffffff;
+}
+
+/******************************************************************************
+accordion
+*******************************************************************************/
+.panel-group {
+  position: relative;
+}
+
+.panel-heading {
+  position: relative;
+  overflow: hidden;
+
+  i {
+    font-size: 48px;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    color: #FFFFFF;
+    -webkit-box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0 0 10px 0 rgba(50, 50, 50, 0.75);
+    box-shadow:         0 0 10px 0 rgba(50, 50, 50, 0.75);
+  }
+}
+
+.panel a {
+  display: inline-block;
+  width: 100%;
+  min-height: 6em;
+  font-size: 1.5em;
+  padding: 15px;
+
+  .clear-link-decoration;
+}
+
+.panel-heading {
+  padding: 0;
+}
+
+.panel-title:hover {
+  cursor: pointer;
+}
+
+.web-development {
+  .gradient-1(244,66,54,75%);
+}
+
+.e-commerce {
+  .gradient-1(234,30,99,60%);
+}
+
+.file-maker {
+  .gradient-2(103,59,183,60%);
+}
+
+.design {
+  .gradient-2(63,81,181,75%);
+}
+
+/******************************************************************************
+carousel
+*******************************************************************************/
+.carousel {
+  min-height: 145px;
+}
+
+.quote {
+  padding: 0 40px;
+}
+
+#quote-carousel {
+  @media screen {
+    @media (min-width:768px) {
+      margin-bottom: 0;
+      padding: 0 30px;
+    }
+  }
+}
+
+/* Control buttons  */
+#quote-carousel .carousel-control {
+  background: none;
+  color: #222;
+  font-size: 4em;
+  text-shadow: none;
+  padding-top: 20px;
+}
+
+/* Previous button  */
+#quote-carousel .carousel-control.left {
+  left: -12px;
+}
+
+/* Next button  */
+#quote-carousel .carousel-control.right {
+  right: -12px !important;
+}
+
+/******************************************************************************
+bottom
+*******************************************************************************/
+.bottom {
+  background-color: @base-bg-color;
+  color: #FFFFFF;
+
+  .col {
+    padding: 10px 30px 0 30px;
+
+
+    h3 {
+      font-family: @special-font-family;
+      border-bottom: 5px solid #FFFFFF;
+      margin-bottom: 10px;
+    }
+  }
+
+  a {
+    color: #FFFFFF;
+
+    .link;
+  }
+
+  i {
+    vertical-align: middle;
+  }
+}
+
+/******************************************************************************
+images
+*******************************************************************************/
+.domain-names {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  z-index: -1;
+  height: 240px;
+  width: 360px;
+  background: url("/img/misc/domain-names.jpg") no-repeat;
+}
+
+.paint-bucket {
+  position: absolute;
+  right: -230px;
+  bottom: -150px;
+  z-index: -1;
+  height: 200px;
+  width: 280px;
+  background: url("/img/misc/paint-bucket.jpg") no-repeat;
+
+  @media (max-width:1400px) {
+    right: -115px;
+    bottom: -75px;
+    z-index: -1;
+    height: 100px;
+    width: 140px;
+    background: url("/img/misc/paint-bucket-sm.jpg") no-repeat;
+  }
+}
