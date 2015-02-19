@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('Versover'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle($this->translate('Versover'))->setSeparator(' &bull; ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -39,10 +39,10 @@
             </div><!-- /main nav -->
 
             <?php echo $this->content; ?>
-            <footer id="footer" class="text-center">
-                <p>&copy; Versover <?php echo date('Y'); ?></p>
-            </footer>
         </div> <!-- /container -->
+        <footer id="footer" class="text-center">
+            <p>&copy; Versover <?php echo date('Y'); ?></p>
+        </footer>
         <div class="domain-names hidden-xs"></div>
         <?php
         $script =  $this->inlineScript();

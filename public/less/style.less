@@ -12,27 +12,41 @@ main
 
 .gradient-1(@r, @g, @b, @rate) {
   background: rgb(255,255,255);
-  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 80%, rgba(@r,@g,@b,1) 100%);
+  background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 80%, rgba(@r,@g,@b,1) 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(@rate,rgba(255,255,255,1)), color-stop(100%,rgba(@r,@g,@b,1)));
-  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
-  background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
-  background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
-  background: linear-gradient(135deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
 }
 
 .gradient-2(@r, @g, @b, @rate) {
   background: rgb(255,255,255);
-  background: -moz-linear-gradient(45deg,  rgba(255,255,255,1) 80%, rgba(@r,@g,@b,1) 100%);
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 80%, rgba(@r,@g,@b,1) 100%);
   background: -webkit-gradient(linear, left bottom, right top, color-stop(@rate,rgba(255,255,255,1)), color-stop(100%,rgba(@r,@g,@b,1)));
-  background: -webkit-linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
-  background: -o-linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
-  background: -ms-linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
-  background: linear-gradient(45deg,  rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
+  background: linear-gradient(45deg, rgba(255,255,255,1) @rate,rgba(@r,@g,@b,1) 100%);
 }
 
 html {
   position: relative;
   min-height: 100%;
+}
+
+body {
+  margin-bottom: 40px;
+}
+
+::-moz-selection {
+  color: @base-bg-color;
+  background: #fff176;
+}
+
+::selection {
+  color: @base-bg-color;
+  background: #fff176;
 }
 
 // remove margin and padding
@@ -52,9 +66,9 @@ h1, h2, h3, h4, h5, h6 {
   .clear-space;
 }
 
-.link {
+.link(@color: #ffffff) {
   text-decoration: none;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid @color;
 
   &:hover, &:focus {
     text-decoration: none;
@@ -62,16 +76,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.border-bottom(@size: 5px, @border-color: #ffffff) {
+  border-bottom: @size solid @border-color;
+  margin-bottom: 10px;
+}
+
 /******************************************************************************
 footer
 *******************************************************************************/
 #footer {
   position: absolute;
-  left: 0;
   bottom: 0;
   width: 100%;
-  height: 10px;
-  padding-top: 20px;
+  height: 40px;
 }
 
 /******************************************************************************
@@ -192,8 +209,7 @@ bottom
 
     h3 {
       font-family: @special-font-family;
-      border-bottom: 5px solid #FFFFFF;
-      margin-bottom: 10px;
+      .border-bottom();
     }
   }
 
@@ -214,7 +230,7 @@ images
 .domain-names {
   position: absolute;
   left: 0;
-  bottom: -30px;
+  bottom: 0;
   z-index: -1;
   height: 240px;
   width: 360px;
@@ -238,4 +254,68 @@ images
     width: 140px;
     background: url("/img/misc/paint-bucket-sm.jpg") no-repeat;
   }
+}
+
+/******************************************************************************
+contacts
+*******************************************************************************/
+.contacts {
+  position: relative;
+
+  h4 {
+    color: @base-bg-color;
+
+    span {
+      color: #000011;
+    }
+
+    a {
+      .link(@base-bg-color);
+    }
+  }
+
+  h2 {
+    margin: 50px 0 15px 0;
+
+    span {
+      .border-bottom(3px, rgba(244,66,54,1));
+    }
+  }
+}
+
+textarea {
+  min-height: 200px;
+}
+
+.email-message {
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 45px 0;
+  opacity: 0.9;
+  color: #FFFFFF;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.email-message-success {
+  background: @base-bg-color;
+
+}
+
+.email-message-error {
+  background: rgba(244,66,54,1);
+}
+
+.painter {
+  height: 167px;
+  width: 110px;
+  position: absolute;
+  top: 60%;
+  right: -20px;
+  background: url("/img/misc/painter.jpg") no-repeat;
 }

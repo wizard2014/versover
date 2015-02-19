@@ -1,3 +1,44 @@
-Module: Application
-Controller: Index
-Action: contacts
+<?php
+$title = 'Contacts';
+$this->headTitle($title);
+?>
+<div class="row contacts">
+    <h2 class="text-center"><span>You can contact with us via:</span></h2>
+
+    <div class="col col-sm-10 col-sm-offset-2">
+        <h4><span><i class="fa fa-phone fa-2x"></i> Phone:</span> +38(067)562-37-77</h4>
+        <h4><span><i class="fa fa-envelope-o fa-2x"></i> Email:</span> <a href="mailto:versoverteam@gmail.com">versoverteam@gmail.com</a></h4>
+        <h4><span><i class="fa fa-skype fa-2x"></i> Skype:</span> <a href="skype:versover?chat">versover</a></h4>
+    </div>
+
+    <div class="col col-xs-10 col-xs-offset-1">
+        <h2 class="text-center"><span>Or write an e-mail directly from the site:</span></h2>
+        <form class="form-horizontal send-mail-form">
+            <div class="form-group">
+                <label for="input-subject" class="col col-sm-2 control-label">Subject</label>
+                <div class="col col-sm-10">
+                    <input name="subject" type="text" class="form-control subject" id="input-subject" placeholder="Subject" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-email" class="col col-sm-2 control-label">Email</label>
+                <div class="col col-sm-10">
+                    <input name="email" type="email" class="form-control email" id="input-email" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-message" class="col col-sm-2 control-label">Message</label>
+                <div class="col col-sm-10">
+                    <textarea name="message" id="input-message" class="form-control message" placeholder="Essence" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col col-sm-10 col-sm-offset-2">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="painter hidden-sm hidden-xs"></div>
+</div>
