@@ -7,7 +7,8 @@ fonts (16 18 20 22 24 26 28 36 48)
 /******************************************************************************
 main
 *******************************************************************************/
-@base-bg-color: #009587;
+@base-bg-color: #3F51B5;
+@second-bg-color: #FF5722;
 @special-font-family: 'Audiowide', cursive;
 
 .gradient-1(@r, @g, @b, @rate) {
@@ -39,14 +40,22 @@ body {
   margin-bottom: 40px;
 }
 
+.container-fluid, .col {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
 ::-moz-selection {
   color: @base-bg-color;
-  background: #fff176;
+  background: @second-bg-color;
 }
 
 ::selection {
   color: @base-bg-color;
-  background: #fff176;
+  background: @second-bg-color;
 }
 
 // remove margin and padding
@@ -81,6 +90,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
+.delim {
+  height: 5px;
+  border: 2px solid #ffffff;
+  margin-bottom: 10px;
+}
+
 /******************************************************************************
 footer
 *******************************************************************************/
@@ -89,6 +104,10 @@ footer
   bottom: 0;
   width: 100%;
   height: 40px;
+  color: #ffffff;
+  padding-top: 9px;
+  background: @base-bg-color;
+  border-top: 1px solid #ffffff;
 }
 
 /******************************************************************************
@@ -142,7 +161,7 @@ accordion
 }
 
 .web-development {
-  .gradient-1(244,66,54,75%);
+  .gradient-1(244,66,54,72%);
 }
 
 .e-commerce {
@@ -154,7 +173,7 @@ accordion
 }
 
 .design {
-  .gradient-2(63,81,181,75%);
+  .gradient-2(63,81,181,72%);
 }
 
 /******************************************************************************
@@ -180,10 +199,14 @@ carousel
 /* Control buttons  */
 #quote-carousel .carousel-control {
   background: none;
-  color: #222;
   font-size: 4em;
   text-shadow: none;
   padding-top: 20px;
+  color: @base-bg-color;
+
+  &:hover {
+    color: @second-bg-color;
+  }
 }
 
 /* Previous button  */
@@ -201,15 +224,17 @@ bottom
 *******************************************************************************/
 .bottom {
   background-color: @base-bg-color;
-  color: #FFFFFF;
+  color: #ffffff;
 
   .col {
-    padding: 10px 30px 0 30px;
+    padding: 10px 30px 0 0;
 
+    &:last-child {
+      padding-right: 0;
+    }
 
     h3 {
       font-family: @special-font-family;
-      .border-bottom();
     }
   }
 
@@ -230,11 +255,27 @@ images
 .domain-names {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 205px;
   z-index: -1;
   height: 240px;
   width: 360px;
   background: url("/img/misc/domain-names.jpg") no-repeat;
+
+  @media (max-width:1800px) {
+    height: 153px;
+    width: 230px;
+    background: url("/img/misc/domain-names-md.jpg") no-repeat;
+  }
+
+  @media (max-width:1550px) {
+    height: 80px;
+    width: 120px;
+    background: url("/img/misc/domain-names-sm.jpg") no-repeat;
+  }
+
+  @media (max-width:1200px) {
+    display: none;
+  }
 }
 
 .paint-bucket {
@@ -246,13 +287,17 @@ images
   width: 280px;
   background: url("/img/misc/paint-bucket.jpg") no-repeat;
 
-  @media (max-width:1400px) {
+  @media (max-width:1650px) {
     right: -115px;
     bottom: -75px;
     z-index: -1;
     height: 100px;
     width: 140px;
     background: url("/img/misc/paint-bucket-sm.jpg") no-repeat;
+  }
+
+  @media (max-width:1400px) {
+    display: none;
   }
 }
 
@@ -270,6 +315,8 @@ contacts
     }
 
     a {
+      color: @base-bg-color;
+
       .link(@base-bg-color);
     }
   }
@@ -278,7 +325,13 @@ contacts
     margin: 50px 0 15px 0;
 
     span {
-      .border-bottom(3px, rgba(244,66,54,1));
+      .border-bottom(3px, @second-bg-color);
+    }
+  }
+
+  .send-mail-form {
+    .col {
+      padding: 0 15px;
     }
   }
 }
@@ -308,14 +361,14 @@ textarea {
 }
 
 .email-message-error {
-  background: rgba(244,66,54,1);
+  background: @second-bg-color;
 }
 
 .painter {
   height: 167px;
   width: 110px;
   position: absolute;
-  top: 60%;
-  right: -20px;
+  top: 90%;
+  right: 250px;
   background: url("/img/misc/painter.jpg") no-repeat;
 }
