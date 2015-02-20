@@ -47,7 +47,7 @@ h6 {
 }
 .delim {
   height: 5px;
-  border: 2px solid #ffffff;
+  border: 2px solid #FF5722;
   margin-bottom: 10px;
 }
 /******************************************************************************
@@ -183,7 +183,7 @@ carousel
 bottom
 *******************************************************************************/
 .bottom {
-  background-color: #3f51b5;
+  background-color: #374147;
   color: #ffffff;
 }
 .bottom .col {
